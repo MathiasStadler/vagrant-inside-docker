@@ -2,7 +2,7 @@
 - I would see that in live 
 - Only for me and main brain :-)
 
-# Changes / Updates compared with zoobab/vagrant-inside-docker
+# Changes / Updates compared with zoobab/vagrant-inside-docker version
 - [x] virtualbox-5.1
 - [x] vagrant 1.9.6
 - [ ] ansible 
@@ -21,6 +21,11 @@ Please read the README.MD from zoobab/vagrant-inside-docker for more Info
 
 # CREDIT
 zoobab/vagrant-inside-docker  => Thanks for your project and presentation.
+
+# Emerging errors are corrected
+- [x] Already Fixed in repo
+- [ ] `ssh` binary could not be found. Is an SSH client installed?
+    * Nested bullet
 
 # edit md
 [MD format guide](https://guides.github.com/features/mastering-markdown/)
