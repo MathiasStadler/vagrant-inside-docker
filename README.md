@@ -3,7 +3,7 @@
 - Only for me and main brain :-)
 
 # Changes / Updates compared with zoobab/vagrant-inside-docker
-- vitualbox-5.1
+- virtualbox-5.1
 - vagrant 1.9.6
 - ansible 
 - ubuntu 16.04.02 guest image 
