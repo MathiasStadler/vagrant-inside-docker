@@ -23,9 +23,9 @@ Please read the README.MD from zoobab/vagrant-inside-docker for more Info
 zoobab/vagrant-inside-docker  => Thanks for your project and presentation.
 
 # Emerging errors are corrected
+- [x] Already Fixed in repo
 - [ ] `ssh` binary could not be found. Is an SSH client installed?
--- test
-
+    * Nested bullet
 
 # edit md
 [MD format guide](https://guides.github.com/features/mastering-markdown/)
