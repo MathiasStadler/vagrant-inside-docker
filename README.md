@@ -24,7 +24,7 @@ zoobab/vagrant-inside-docker  => Thanks for your project and presentation.
 
 # Emerging errors are corrected
 - [ ] `ssh` binary could not be found. Is an SSH client installed?
-> test
+-- test
 
 
 # edit md
