@@ -1,0 +1,1 @@
+docker exec -it $(cat /tmp/vagrant-inside-docker.cid) bash
