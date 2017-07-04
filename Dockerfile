@@ -2,10 +2,15 @@ FROM ubuntu:16.04
 MAINTAINER Benjamin Henrion <zoobab@gmail.com>
 
 RUN echo "deb http://archive.ubuntu.com/ubuntu/ xenial multiverse" >> /etc/apt/sources.list
-RUN apt-get update && apt-get -y -q install wget curl
-
-RUN apt-get remove virtualbox virtualbox-5.0 virtualbox-4.*
 RUN echo "deb http://download.virtualbox.org/virtualbox/debian xenial contrib" >> /etc/apt/sources.list.d/virtualbox.list
+
+
+RUN apt-get update && apt-get -y -q install --no-install-recommends openssh-client && \
+apt-get -y -q remove openssh-client
+apt-get remove virtualbox virtualbox-5.0 virtualbox-4.*
+
+#XXXX
+
 RUN wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc 
 RUN apt-key add oracle_vbox_2016.asc
 RUN apt-get update
