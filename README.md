@@ -3,10 +3,10 @@
 - Only for me and main brain :-)
 
 # Changes / Updates compared with zoobab/vagrant-inside-docker
-- virtualbox-5.1
-- vagrant 1.9.6
-- ansible 
-- ubuntu 16.04.02 guest image 
+- [x] virtualbox-5.1
+- [x] vagrant 1.9.6
+- [] ansible 
+- [] ubuntu 16.04.02 guest image 
 
 # About
 Running vagrant inside a docker container. We use a small box based on OpenWRT 15.05 as a lightweight distro (7MB).
@@ -22,3 +22,5 @@ Please read the README.MD from zoobab/vagrant-inside-docker for more Info
 # CREDIT
 zoobab/vagrant-inside-docker  => Thanks for your project and presentation.
 
+# edit md
+[MD format guide](https://guides.github.com/features/mastering-markdown/)
