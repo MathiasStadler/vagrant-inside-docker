@@ -65,14 +65,19 @@ echo "deb http://download.virtualbox.org/virtualbox/debian xenial contrib" >> /e
 apt-key add /tmp/oracle_vbox_2016.asc && \
 apt-get update && \
 apt-get remove virtualbox virtualbox-5.0 virtualbox-4.* && \
-apt-get install -yy  virtualbox-5.1  openssh-client && \
+apt-get install -yy  dkms virtualbox-5.1  openssh-client && \
 rm -rf /var/lib/apt/lists/* && \
 rm -rf /tmp/oracle_vbox_2016.asc && \
 dpkg -i /tmp/vagrant_1.9.6_x86_64.deb && \
-rm  /tmp/vagrant_1.9.6_x86_64.deb && \
+rm /tmp/vagrant_1.9.6_x86_64.deb && \
 mkdir -pv /root/vagrant-openwrt && \
-vagrant init living42/openwrt-15.05-x86 && \
-vagrant box add living42/openwrt-15.05-x86 
+vagrant init ubuntu/xenial64 && \
+vagrant box add ubuntu/xenial64 
+
+
+#old image
+#vagrant init living42/openwrt-15.05-x86 && \
+#vagrant box add living42/openwrt-15.05-x86 
 
 # using OpenWRT image, only 7MB in size
 COPY vagrant-openwrt/Vagrantfile /root/vagrant-openwrt/Vagrantfile
