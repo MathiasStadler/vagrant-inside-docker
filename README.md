@@ -2,7 +2,6 @@
 - I would see that in live 
 - Only for me and main brain :-)
 
-
 # Changes / Updates compared with zoobab/vagrant-inside-docker
 - vitualbox-5.1
 - vagrant 1.9.6
@@ -18,8 +17,7 @@ Running vagrant inside a docker container. We use a small box based on OpenWRT 1
 - I'm used vagrant 1.9.6 for virtualbox 5.1 ++
 
 # Don't DRY 
-Please read the README.MD from zoobab/vagrant-inside-docker
-
+Please read the README.MD from zoobab/vagrant-inside-docker for more Info
 
 # CREDIT
 zoobab/vagrant-inside-docker  => Thanks for your project and presentation.
