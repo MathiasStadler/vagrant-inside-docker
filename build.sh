@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t vagrant-inside-docker:latest .
+docker build -t ms/vagrant-inside-docker:latest .
