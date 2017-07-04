@@ -70,9 +70,9 @@ rm -rf /var/lib/apt/lists/* && \
 rm -rf /tmp/oracle_vbox_2016.asc && \
 dpkg -i /tmp/vagrant_1.9.6_x86_64.deb && \
 rm  /tmp/vagrant_1.9.6_x86_64.deb && \
-mkdir -pv /root/vagrant-openwrt && \
-vagrant init living42/openwrt-15.05-x86 && \
-vagrant box add living42/openwrt-15.05-x86 
+mkdir -pv /root/vagrant-ubuntu-xenial64 && \
+vagrant init ubuntu/xenial64 && \
+vagrant box add ubuntu/xenial64 
 
 # using OpenWRT image, only 7MB in size
-COPY vagrant-openwrt/Vagrantfile /root/vagrant-openwrt/Vagrantfile
+COPY vagrant-ubuntu-xenial64/Vagrantfile /root/vagrant-ubuntu-xenial64/Vagrantfile
