@@ -1,13 +1,14 @@
 FROM ubuntu:16.04
 MAINTAINER Benjamin Henrion <zoobab@gmail.com>
+MAINTAINER Mathias Stadler <stadler-mathias@web.de>
+
 
 RUN echo "deb http://archive.ubuntu.com/ubuntu/ xenial multiverse" >> /etc/apt/sources.list
-# old RUN apt-get update && apt-get -y -q install wget
+# wget replaced with ADD
 
 RUN apt-get update && \
-apt-get install -yy vim && \\
+apt-get install -yy --no-install-recommends vim openssh-client && \\
 apt-get remove virtualbox virtualbox-5.0 virtualbox-4.*
-#old RUN echo "deb http://download.virtualbox.org/virtualbox/debian xenial contrib" >> /etc/apt/sources.list.d/virtualbox.list
 
 
 ADD https://www.virtualbox.org/download/oracle_vbox_2016.asc  .
@@ -17,12 +18,9 @@ apt-key add oracle_vbox_2016.asc && \
 apt-get update && \
 apt-get install -yy virtualbox-5.1
 
-
-
 ADD https://releases.hashicorp.com/vagrant/1.9.6/vagrant_1.9.6_x86_64.deb .
 RUN dpkg -i vagrant_1.9.6_x86_64.deb
 RUN rm  vagrant_1.9.6_x86_64.deb
-
 
 # using OpenWRT image, only 7MB in size
 RUN mkdir -pv /root/vagrant-openwrt
