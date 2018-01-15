@@ -1,14 +1,58 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+
+
+#custum MAC address for bridge network adpater
+#we need a custum MAC for detect the DHCP IP address
+
+Vagrant.require_version ">= 1.5"
+
+#TODO set MAC address in provisioning_script
+#provisioning_script = provisioning_script.gsub(/BOX_BRIDGE_MAC_ADDR/,box_bridge_mac_addr)
+
 Vagrant.configure(2) do |config|
-  config.vm.box = "ubuntu/xenial64"
-  config.vm.network "forwarded_port", guest: 80, host: 8081 
-  # since we haven't Guest additions, so this feature is not support
-  config.vm.synced_folder ".", "/vagrant", disabled: true
 
-  config.vm.provider "virtualbox" do |vb|
-    vb.customize ["modifyvm", :id, "--usb", "on"]
-    vb.customize ["modifyvm", :id, "--usbehci", "off"]
-  end
+# network
+#Add 2nd inface in bridge mode for the NFS server
+config.vm.network "public_network", type: "dhcp", bridge: "eno1" 
 
+    # What box should we base this build on?
+    config.vm.box = "ubuntu/xenial64"
+
+    #######################################################################
+    # THIS REQUIRES YOU TO INSTALL A PLUGIN. RUN THE COMMAND BELOW...
+    #
+    #   $ vagrant plugin install vagrant-disksize
+    #
+    # Default images are not big enough to build Armbian.
+    config.disksize.size = "40GB"
+
+    # provisioning: install dependencies, download the repository copy
+    #config.vm.provision "shell", inline: provisioning_script
+
+
+    # forward terminal type for better compatibility with Dialog - disabled on Ubuntu by default
+    config.ssh.forward_env = ["TERM"]
+
+    # default user name is "ubuntu", please do not change it
+
+    # SSH password auth is disabled by default, uncomment to enable and set the password
+    #config.ssh.password = "armbian"
+
+    config.vm.provider "virtualbox" do |vb|
+        
+        #name of VM in virtualbox
+        vb.name = "Docker Up and Running"
+
+        # uncomment this to enable the VirtualBox GUI
+        #vb.gui = true
+
+        # Tweak these to fit your needs.
+        vb.memory = "8192"
+        vb.cpus = "4"
+    vb.customize ['modifyvm', :id, '--usb', 'on']
+    #Add the usb filter for the USB Host Mode for the FEL Mode
+    #Caheck inside with lsusb was succesfully if tzhe device is connect AND thr FEL Mode is active
+	vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'OrangePiEFIMode', '--vendorid', '0x1f3a', '--productid', '0xefe8']
+    end
 end

@@ -6,7 +6,7 @@
 - [x] virtualbox-5.1
 - [x] vagrant 1.9.6
 - [ ] ansible 
-- [ ] ubuntu 16.04.02 guest image 
+- [x] ubuntu 16.04.02 guest image 
 
 # About
 Running vagrant inside a docker container. We use a small box based on OpenWRT 15.05 as a lightweight distro (7MB).
@@ -19,8 +19,9 @@ Running vagrant inside a docker container. We use a small box based on OpenWRT 1
 # Don't DRY 
 Please read the README.MD from zoobab/vagrant-inside-docker for more Info
 
-# CREDIT
+# CREDIT / SOURCES
 zoobab/vagrant-inside-docker  => Thanks for your project and presentation.
+http://blog.ruilopes.com/from-iso-to-vagrant-box.html => thx Rui Lopes
 
 # Emerging errors are corrected
 - [x] Already Fixed in repo
